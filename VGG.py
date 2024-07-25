@@ -36,25 +36,3 @@ class VGG(Model):
         x = self.dense2(x)
         x = self.dropout(x)
         return self.dense3(x)
-
-""" # Load and preprocess data
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
-x_train = np.expand_dims(x_train, axis=-1).astype('float32') / 255.0
-x_test = np.expand_dims(x_test, axis=-1).astype('float32') / 255.0
-y_train = to_categorical(y_train, 10)
-y_test = to_categorical(y_test, 10)
-
-# Create model instance
-model = VGG()
-
-# Compile the model
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-
-# Train the model
-model.fit(x_train, y_train, batch_size=64, epochs=10, validation_data=(x_test, y_test))
-
-# Evaluate the model
-loss, accuracy = model.evaluate(x_test, y_test)
-print(f'Test loss: {loss:.4f}, Test accuracy: {accuracy:.4f}') """
